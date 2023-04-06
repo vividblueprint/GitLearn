@@ -11,24 +11,29 @@ graph TD;
   C-->D;
 ```
 
-
-```mermaid
-import base64
-from IPython.display import Image, display
-import matplotlib.pyplot as plt
-
-def mm(graph):
-  graphbytes = graph.encode("ascii")
-  base64_bytes = base64.b64encode(graphbytes)
-  base64_string = base64_bytes.decode("ascii")
-  display(Image(url="https://mermaid.ink/img/" + base64_string))
-
-mm("""
-graph LR;
-    A--> B & C & D;
-    B--> A & E;
-    C--> A & E;
-    D--> A & E;
-    E--> B & C & D;
-""")
+```geojson
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 1,
+      "properties": {
+        "ID": 0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+              [-90,35],
+              [-90,30],
+              [-85,30],
+              [-85,35],
+              [-90,35]
+          ]
+        ]
+      }
+    }
+  ]
+}
 ```
