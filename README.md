@@ -97,71 +97,21 @@ solid cube_corner
 endsolid
 ```
 
-<html>
-  <body>
-    <p align="center" class="mermaid">
-            graph BT 
-            A(AKTER MST SHAMIMAM\n2022272110008) --> B(Contributors) 
-            C(MIA MD SHMIM\n2022272110001) --> B 
-            D(MIA MD SHMIM\n2022272110001) --> B
-    </p>
-    <p align="center" class="mermaid">
-            gitGraph
-              commit
-              commit
-              branch develop
-              commit
-              commit
-              commit
-              checkout main
-              commit
-              commit
-    </p>
-    <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-      mermaid.initialize({ startOnLoad: true });
-    </script>
-  </body>
-</html>
-
 ```mermaid
-    gitGraph
-       commit
-       commit
-       branch develop
-       commit
-       commit
-       commit
-       checkout main
-       commit
-       commit
+  graph BT 
+    A(AKTER MST SHAMIMAM\n2022272110008) --> B(Contributors) 
+    C(MIA MD SHMIM\n2022272110001) --> B 
+    D(JONY MD MONIR HOSEN\n2022272110005) --> B
 ```
-
 ```mermaid
-graph TD
-    A[Enter Chart Definition] --> B(Preview)
-    B --> C{decide}
-    C --> D[Keep]
-    C --> E[Edit Definition]
-    E --> B
-    D --> F[Save Image and Code]
-    F --> B
-
-
+  gitGraph
+    commit
+    commit
+    branch develop
+    commit
+    commit
+    commit
+    checkout main
+    commit
+    commit
 ```
-
-<html>
-  <body>
-    Here is one mermaid diagram:
-    <p align="center" class="mermaid">
-            graph BT 
-            A[MIA MD SHMIM\n2022272110001] --> B[Load Balancer] 
-            C[MIA MD SHMIM\n2022272110001] --> B 
-            D[MIA MD SHMIM\n2022272110001] --> B
-    </p>
-    <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-      mermaid.initialize({ startOnLoad: true });
-    </script>
-  </body>
-</html>
