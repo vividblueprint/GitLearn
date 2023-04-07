@@ -7,6 +7,12 @@
 graph TD;
   A-->B;
   A-->C;
+```
+
+```mermaid
+graph TD;
+  A-->B;
+  A-->C;
   B-->D;
   C-->D;
 ```
@@ -91,6 +97,33 @@ solid cube_corner
 endsolid
 ```
 
+<html>
+  <body>
+    <p align="center" class="mermaid">
+            graph BT 
+            A(AKTER MST SHAMIMAM\n2022272110008) --> B(Contributors) 
+            C(MIA MD SHMIM\n2022272110001) --> B 
+            D(MIA MD SHMIM\n2022272110001) --> B
+    </p>
+    <p align="center" class="mermaid">
+            gitGraph
+              commit
+              commit
+              branch develop
+              commit
+              commit
+              commit
+              checkout main
+              commit
+              commit
+    </p>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+  </body>
+</html>
+
 ```mermaid
     gitGraph
        commit
@@ -103,6 +136,7 @@ endsolid
        commit
        commit
 ```
+
 ```mermaid
 graph TD
     A[Enter Chart Definition] --> B(Preview)
@@ -116,25 +150,17 @@ graph TD
 
 ```
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-  </head>
+<html>
   <body>
-    <pre class="mermaid">
-            graph LR 
-            A --- B 
-            B-->C[fa:fa-ban forbidden] 
-            B-->D(fa:fa-spinner);
-    </pre>
-    <pre class="mermaid">
-            graph TD 
-            A[Client] --> B[Load Balancer] 
-            B --> C[Server1] 
-            B --> D[Server2]
-    </pre>
+    Here is one mermaid diagram:
+    <p align="center" class="mermaid">
+            graph BT 
+            A[MIA MD SHMIM\n2022272110001] --> B[Load Balancer] 
+            C[MIA MD SHMIM\n2022272110001] --> B 
+            D[MIA MD SHMIM\n2022272110001] --> B
+    </p>
     <script type="module">
-      import mermaid from 'The/Path/In/Your/Package/mermaid.esm.mjs';
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
       mermaid.initialize({ startOnLoad: true });
     </script>
   </body>
