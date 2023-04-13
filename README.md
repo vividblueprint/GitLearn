@@ -49,7 +49,6 @@
     classDef red fill:#ed2633,stroke:#000,stroke-width:2px,color:#fff;
     classDef none fill:#none,stroke:#000,stroke-width:2px,color:#fff;
     subgraph USE[Use Case\nDiagram];
-    style USE  fill:none,stroke:#f0000,stroke-width:2px;
     1;2;2.1;3;3.1;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21
     end
 
