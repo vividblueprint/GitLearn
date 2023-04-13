@@ -17,6 +17,24 @@ graph TD;
   C-->D;
 ```
 
+````mermaid
+usecase User {
+  Actor User
+  User --> (Login)
+  User --> (Logout)
+  User --> (View Profile)
+}
+
+usecase Admin {
+  Actor Admin
+  Admin --> (Login)
+  Admin --> (Logout)
+  Admin --> (View Profile)
+  Admin --> (Manage Users)
+}
+
+User --> Admin
+
 ```geojson
 {
   "type": "FeatureCollection",
@@ -42,13 +60,13 @@ graph TD;
     }
   ]
 }
-```
+````
+
 | Column 1 Header | Column 2 Header | Column 3 Header |
 | --------------- | --------------- | --------------- |
-| Row 1 Column 1 | Row 1 Column 2 | Row 1 Column 3 |
-| Row 2 Column 1 | Row 2 Column 2 | Row 2 Column 3 |
-| Row 3 Column 1 | Row 3 Column 2 | Row 3 Column 3 |
-
+| Row 1 Column 1  | Row 1 Column 2  | Row 1 Column 3  |
+| Row 2 Column 1  | Row 2 Column 2  | Row 2 Column 3  |
+| Row 3 Column 1  | Row 3 Column 2  | Row 3 Column 3  |
 
 ```mermaid
 sequenceDiagram
@@ -98,11 +116,12 @@ endsolid
 ```
 
 ```mermaid
-  graph BT 
-    A(AKTER MST SHAMIMAM\n2022272110008) --> B(Contributors) 
-    C(MIA MD SHMIM\n2022272110001) --> B 
+  graph BT
+    A(AKTER MST SHAMIMAM\n2022272110008) --> B(Contributors)
+    C(MIA MD SHMIM\n2022272110001) --> B
     D(JONY MD MONIR HOSEN\n2022272110005) --> B
 ```
+
 ```mermaid
   gitGraph
     commit
