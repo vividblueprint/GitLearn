@@ -55,8 +55,100 @@
 ```
 
 ```mermaid
-    graph LR
-    shamim
+graph TD
+  subgraph "Presentation Layer (UI)"
+    A(Mobile App)
+    B(Web Interface)
+    C(Voice Assistant)
+    D(Wearables)
+  end
+  subgraph "Application Layer (Logic)"
+    E(Matching Algorithm)
+    F(Pricing Algorithm)
+    G(Payment Processing)
+  end
+  subgraph "Service Layer (Backend)"
+    H(Geolocation Service)
+    I(Notification Service)
+    J(SMS Gateway)
+  end
+  subgraph "Data Layer (Storage)"
+    K(User Profiles)
+    L(Ride History)
+    M(Payment Information)
+    N(Driver Qualifications)
+  end
+  subgraph "Infrastructure Layer (Hardware)"
+    O(Servers)
+    P(Databases)
+    Q(Network Components)
+    R(Cloud Services)
+  end
+  subgraph "Analytics Layer (Data Analysis)"
+    S(Service Performance Monitoring)
+    T(Rider & Driver Behavior Analysis)
+  end
+  subgraph "Security Layer (Protection)"
+    U(Authentication & Access Control)
+    V(Data Encryption)
+    W(Monitoring)
+  end
+  subgraph "Integration Layer (Third-party)"
+    X(Payment Processor)
+    Y(Mapping Service)
+    Z(Social Media Platform)
+  end
+  A -->|Requests rides| E
+  E -->|Connects drivers with riders| H
+  H -->|Tracks location of drivers and passengers| K
+  K -->|Stores user profiles| U
+  B -->|Requests rides| F
+  F -->|Determines ride costs| I
+  I -->|Alerts drivers and riders| W
+  L -->|Stores ride history| T
+  C -->|Requests rides| G
+  G -->|Handles payments| J
+  M -->|Stores payment information| V
+  D -->|Requests rides| S
+  Q -->|Provides infrastructure support| O
+  P -->|Manages data storage| M
+  R -->|Provides cloud services| S
+  V -->|Provides data encryption| W
+  U -->|Provides authentication| W
+  J -->|Processes payments| X
+  Y -->|Provides mapping services| H
+  Z -->|Provides social media integration| T
+
+```
+
+```mermaid
+graph TD
+  A["Presentation Layer (UI)"] -->|Mobile App| B["Application Layer (Logic)"]
+  A -->|Web Interface| B
+  A -->|Voice Assistant| B
+  A -->|Wearables| B
+  B -->|Matching Algorithm| C["Service Layer (Backend)"]
+  B -->|Pricing Algorithm| C
+  B -->|Payment Processing| C
+  C -->|Geolocation Service| D["Data Layer (Storage)"]
+  C -->|Notification Service| D
+  C -->|SMS Gateway| D
+  D -->|User Profiles| E["Infrastructure Layer (Hardware)"]
+  D -->|Ride History| E
+  D -->|Payment Information| E
+  D -->|Driver Qualifications| E
+  E -->|Servers| F["Analytics Layer (Data Analysis)"]
+  E -->|Databases| F
+  E -->|Network Components| F
+  E -->|Cloud Services| F
+  F -->|Service Performance Monitoring| G["Security Layer (Protection)"]
+  F -->|Rider & Driver Behavior Analysis| G
+  G -->|Authentication & Access Control| H["Integration Layer (Third-party)"]
+  G -->|Data Encryption| H
+  G -->|Monitoring| H
+  H -->|Payment Processor| I(( ))
+  H -->|Mapping Service| I(( ))
+  H -->|Social Media Platform| I(( ))
 ```
 
 ```mermaid
@@ -65,11 +157,87 @@
 ```
 
 ```mermaid
-    graph LR
-    shamim
-```
+graph TD
+    subgraph "Presentation Layer (UI)"
+    A[Mobile App]
+    B[Web Interface]
+    C[Voice Assistant]
+    D[Wearables]
+    end
 
-```mermaid
-    graph LR
-    shamim
+    subgraph "Application Layer (Logic)"
+    E[Matching Algorithm]
+    F[Pricing Algorithm]
+    G[Payment Processing]
+    end
+
+    subgraph "Service Layer (Backend)"
+    H[Geolocation Service]
+    I[Notification Service]
+    J[SMS Gateway]
+    end
+
+    subgraph "Data Layer (Storage)"
+    K[User Profiles]
+    L[Ride History]
+    M[Payment Information]
+    N[Driver Qualifications]
+    end
+
+    subgraph "Infrastructure Layer (Hardware)"
+    O[Servers]
+    P[Databases]
+    Q[Network Components]
+    R[Cloud Services]
+    end
+
+    subgraph "Analytics Layer (Data Analysis)"
+    S[Service Performance Monitoring]
+    T[Rider & Driver Behavior Analysis]
+    end
+
+    subgraph "Security Layer (Protection)"
+    U[Authentication & Access Control]
+    V[Data Encryption]
+    W[Monitoring]
+    end
+
+    subgraph "Integration Layer (Third-party)"
+    X[Payment Processor]
+    Y[Mapping Service]
+    Z[Social Media Platform]
+    end
+
+    A -->|Interacts with| E
+    B -->|Interacts with| E
+    C -->|Interacts with| E
+    D -->|Interacts with| E
+    E -->|Uses| F
+    E -->|Uses| G
+    F -->|Uses| H
+    F -->|Uses| I
+    G -->|Uses| J
+    H -->|Uses| K
+    H -->|Uses| L
+    I -->|Uses| M
+    K -->|Related To| N
+    O -->|Supports| P
+    O -->|Supports| Q
+    O -->|Supports| R
+    P -->|Uses| K
+    P -->|Uses| L
+    P -->|Uses| M
+    P -->|Uses| N
+    K -->|Uses| S
+    L -->|Uses| S
+    N -->|Uses| S
+    S -->|Generates Data For| T
+    T -->|Provides Insights For| E
+    U -->|Protects| M
+    V -->|Protects| M
+    W -->|Monitors| M
+    X -->|Integrates With| G
+    Y -->|Integrates With| H
+    Z -->|Integrates With| B
+
 ```
