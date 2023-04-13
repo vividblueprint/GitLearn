@@ -27,14 +27,3 @@ graph TD
  System1 -- Action 5 --> shamim
  System1 -- Action 6 --> shamim
 ```
-
-```mermaid
-graph TD
-Actor -- Action 1 --> Use Case 1
-Actor -- Action 2 --> Use Case 2
-Actor -- Action 3 --> Use Case 3
-Use Case 1 -- Action 4 --> System
-Use Case 2 -- Action 5 --> System
-Use Case 3 -- Action 6 --> System
-
-```
