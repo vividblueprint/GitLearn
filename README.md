@@ -19,8 +19,55 @@
     A --> 15([ ])
 
     subgraph
-    1;2;3;4;5;6;7;8;9;10;11;12;13;14;15
+    1;2;3;4;5;6;7;8;9;10;11;12;134
     end
+
+```
+
+```mermaid
+graph LR;
+Rd(Rider);
+Dv(Driver);
+Rsc(Ride Sharing Company);
+Nve(Navigation Engine);
+Gps(GPS);
+Pg(Payent Gateway);
+classDef blue fill:#ff0000, stroke:#000, color:#fff;
+Rd --> A([Register]);
+Dv --> A:::blue;
+Rd --> B([Login]);
+Dv --> B;
+Rd --> C([Manage Account]);
+Dv --> C;
+Rd --> D([Search for Trip Details]);
+  D --> Nve;
+Rd --> E([Request Ride]);
+Rsc --> E;
+  E --> Nve;
+  E --> Gps;
+Dv --> F([Start ride]);
+  F --> Nve;
+Rd --> G([View Ride History]);
+  G --> Nve;
+  G --> Gps;
+Rd --> H([Cancel Request]);
+Dv --> H;
+Rsc --> H;
+Rd --> I([Make Payment]);
+  I --> Pg;
+Rd --> J([Update Ride Details]);
+  J --> Nve;
+  J --> Gps;
+Dv --> J;
+Rd --> K([Rate Driver]);
+Dv --> L([End Trip]);
+  L --> Gps;
+Rd --> M([Report Issue]);
+Rsc --> M;
+subgraph USE[ ];
+style USE  fill:none,stroke:#f0000,stroke-width:2px;
+A;B;C;D;E;F;G;H;I;J;K;L;M;
+end;
 
 ```
 
