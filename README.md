@@ -17,23 +17,33 @@ graph TD;
   C-->D;
 ```
 
-````mermaid
-usecase User {
-  Actor User
-  User --> (Login)
-  User --> (Logout)
-  User --> (View Profile)
-}
+# use case diagram
 
-usecase Admin {
-  Actor Admin
-  Admin --> (Login)
-  Admin --> (Logout)
-  Admin --> (View Profile)
-  Admin --> (Manage Users)
-}
+```mermaid
+  graph TD
+      User-->Login
+      User-->Logout
+      User-->View Profile
+      User-->Search
+      Admin-->Login
+      Admin-->Logout
+      Admin-->Create User
+      Admin-->Edit User
 
-User --> Admin
+```
+
+```mermaid
+graph TD
+    User-->Login
+    User-->View Profile
+    User-->Logout
+    Login-->Dashboard
+    View Profile-->Dashboard
+    Dashboard-->View Reports
+    Dashboard-->Create Report
+    Dashboard-->Edit Profile
+    Dashboard-->Logout
+```
 
 ```geojson
 {
@@ -49,18 +59,33 @@ User --> Admin
         "type": "Polygon",
         "coordinates": [
           [
-              [-90,35],
-              [-90,30],
-              [-85,30],
-              [-85,35],
-              [-90,35]
+            [
+              -90,
+              35
+            ],
+            [
+              -90,
+              30
+            ],
+            [
+              -85,
+              30
+            ],
+            [
+              -85,
+              35
+            ],
+            [
+              -90,
+              35
+            ]
           ]
         ]
       }
     }
   ]
 }
-````
+```
 
 | Column 1 Header | Column 2 Header | Column 3 Header |
 | --------------- | --------------- | --------------- |
