@@ -269,3 +269,83 @@ J -->|Manage content<br>on website or app
 K -->|Provide Customer<br>support and help
 
 ```
+
+
+
+
+```mermaid
+graph TD
+  subgraph "Application"
+    A1[Authentication] -- OpenID Connect --> A2[Authorization]
+    A2 -- OAuth2 --> A3[API Gateway]
+    A3 --HTTP/REST--> A4[Microservices]
+    A4 -- message queue --> A5[Background Jobs]
+    A5 -- Cron --> A6[Batch Jobs]
+    A4 -- gRPC --> A7[Event-driven Services]
+    A2 -- Cassandra --> A8[Access Control Policy Store]
+    A3 -- Prometheus --> A9[Metrics Storage]
+    A3 -- Grafana --> A10[Metrics Dashboard]
+  end
+
+  subgraph "Infrastructure"
+    B1[Virtual Machines] --> B2[Kubernetes]
+    B2 --> B3[Docker Containers]
+    B2 --> B4[Service Mesh]
+    B4 -- gRPC --> B5[Distributed Tracing]
+    B4 -- HTTP/REST --> B6[API Gateway]
+    B6 --Helm--> B7[Kubernetes Manifests]
+    B1 -- Virtual Network --> B8[Load Balancer]
+    B8 -- DNS --> B9[Domain Name]
+    B1 -- Storage --> B10[File System]
+    B1 -- Monitoring Agent --> B11[Prometheus Exporter]
+  end
+
+  subgraph "Data"
+    C1[Structured Data] -- SQL --> C2[Relational Database]
+    C1 -- NoSQL --> C3[Document Database]
+    C1 -- Time Series --> C4[Metrics Database]
+    C1 -- Key-value --> C5[Cache]
+    C1 -- Graph --> C6[Graph Database]
+    C1 -- Search --> C7[Search Engine]
+    C2 -- Table Partition --> C8[Shard]
+    C3 -- Distributed Cluster --> C9[Replica Set]
+    C4 -- Retention Policy --> C10[Data Archive]
+    C5 -- Expiration --> C11[Cache Eviction]
+    C7 -- Query Language --> C12[DSL]
+    C7 -- Full-text Search --> C13[Indexing]
+  end
+
+  subgraph "Security"
+    D1[Secrets Management] -- HashiCorp Vault --> D2[Credentials Store]
+    D2 -- HMAC --> D3[API Gateway Signing Key]
+    D1 -- Encryption --> D4[Symmetric Keys]
+    D4 --AES-256-GCM--> D5[Message Encryption]
+    D4 --RSA-OAEP--> D6[Public Key Encryption]
+    D1 -- Certificate --> D7[Certificate Authority]
+    D7 --TLS--> D8[HTTPS/TLS Termination]
+    D1 -- Identity --> D9[OAuth2 Provider]
+    D9 -- JWT --> D10[Identity Token]
+    D9 -- OpenID Connect --> D11[Discovery Endpoint]
+  end
+
+  A1 -.-> B1
+  A1 -.-> D1
+  A2 -.-> B1
+  A2 -.-> D1
+  A3 -.-> B1
+  A3 -.-> D1
+  A4 -.-> B2
+  A4 -.-> C1
+  A4 -.-> D1
+  A5 -.-> B2
+  A5 -.-> C1
+  A6 -.-> B2
+  A6 -.-> C1
+  A7 -.-> B2
+  A7 -.-> C1
+  A8 -.-> C1
+  A9 -.-> B1
+  A10 -.-> B1
+  B2 -.-> B1
+  B2 -.-> 'shamim'
+  ```
