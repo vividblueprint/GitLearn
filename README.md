@@ -1,5 +1,5 @@
 ```mermaid
-graph LR
+graph TB
 
 A["Parse a given input program using the LR(0) parser"]
 B["Define the grammar"]
