@@ -17,11 +17,11 @@ graph LR
     A --> P["printGrammarTable"]
     P --> Q["Print Grammar Table"]
     B --> R["Input is Valid Syntax?"]
-    R -->|Yes|-- S["Print valid syntax"]
-    R -->|No|-- T["Print not a valid syntax"]
+    R -->Yes-- S["Print valid syntax"]
+    R -->No-- T["Print not a valid syntax"]
     T --> U["Print Parsing Error"]
-    U -->|Error| --V[End]
-    V -->|Success| --W[End]
+    U -->Error --V[End]
+    V -->Success --W[End]
     W --> X[End]
 
 ```
