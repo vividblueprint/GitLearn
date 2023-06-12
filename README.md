@@ -1,3 +1,4 @@
+```mermaid
 graph LR
 
 A[Parse a given input program using the LR(0) parser]
@@ -12,3 +13,4 @@ B --> C
 C --> D
 D --> E
 E --> F
+```
