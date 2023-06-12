@@ -1,34 +1,27 @@
 ```mermaid
 graph LR
-A[Start] --> B[parse(input)]
-B --> C{index == len(tokens)?}
-C --> |Yes| D[print valid syntax]
-C --> |No| E[raise ValueError]
-D --> F[End]
-E --> F[End]
-B --> F[End]
-B --> G[try]
-G --> H[S()]
-H --> I[E()]
-I --> J[T()]
-J --> K[TPrime()]
-K --> L[F()]
-L --> M[F()]
-M --> N[F()]
-N --> O[EPrime()]
-O --> P[EPrime()]
-P --> |+| Q[match('+')]
-Q --> R[T()]
-R --> S[TPrime()]
-S --> T[F()]
-T --> U[F()]
-U --> V[F()]
-V --> W[EPrime()]
-W --> O
-P --> |ε| O
-J --> K
-I --> J
-H --> I
-G --> C
+    A[Start] --> B[parse]
+    B --> C[S]
+    C --> D[E]
+    D --> E[T]
+    E --> F[F]
+    F --> G["F -> ( E )"]
+    F --> H["F -> id"]
+    E --> I[TPrime]
+    I --> J["TPrime -> * F TPrime"]
+    I --> K["TPrime -> ε"]
+    D --> L["EPrime"]
+    L --> M["EPrime -> + T EPrime"]
+    L --> N["EPrime -> ε"]
+    C --> O["S -> E"]
+    A --> P["printGrammarTable"]
+    P --> Q["Print Grammar Table"]
+    B --> R["Input is Valid Syntax?"]
+    R -->|Yes|-- S["Print valid syntax"]
+    R -->|No|-- T["Print not a valid syntax"]
+    T --> U["Print Parsing Error"]
+    U -->|Error| --V[End]
+    V -->|Success| --W[End]
+    W --> X[End]
 
 ```
